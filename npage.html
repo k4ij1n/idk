@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .center-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .options {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 120px; 
+            padding: 10px 0;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .yes-message {
+            margin-top: 50px;
+            font-size: 24px;
+            color: #008000;
+        }
+    </style>
+    <title>why no? :<</title>
+</head>
+<body>
+    <div class="container">
+        <img id="valentine-image" src="p.jpg" alt="Valentine's Day" class="center-image">
+        <p class="question" id="valentine-text">*shocked*</p>
+        <div class="options">
+            <a href="ypage.html" class="btn">Yes</a>
+            <button onclick="showNextNoContent()" class="btn">No</button>
+        </div>
+    </div>
+
+    <script>
+        var currentIndex = 0;
+        var randomTexts = [
+            "Are you kidding me!?",
+            "Bshit!",
+            "Tarong buhhh",
+            "Okay ayaw :<",
+            "Buy :<",
+			"dili najud mahangyo dong? :<",
+        ];
+        var images = ["p3.jpg", "p4.jpg", "p5.jpg", "rip-juice-cry.gif", "sobbing-sob.gif", "p6.jpg"];
+
+        function showNextNoContent() {
+            var nextText = randomTexts[currentIndex];
+            var nextImage = images[currentIndex];
+            currentIndex = (currentIndex + 1) % randomTexts.length;
+
+            document.getElementById("valentine-text").innerText = nextText;
+            document.getElementById("valentine-image").src = nextImage;
+        }
+    </script>
+</body>
+</html>
